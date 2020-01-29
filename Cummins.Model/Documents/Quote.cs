@@ -10,14 +10,6 @@ namespace Cummins.Model.Documents
 
         public Guid ContractorId { get; set; }
 
-        [Required] public string State { get; set; }
-
-        public bool IsShared { get; set; }
-
-        public bool IsAccepted { get; set; }
-
-        public bool IsArchived { get; set; }
-
         [Required] public StartTestInformation StartTestInformation { get; set; }
 
         [Required] public PMA PMA { get; set; }

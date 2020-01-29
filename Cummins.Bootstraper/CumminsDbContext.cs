@@ -46,22 +46,39 @@ namespace Cummins.Bootstrapper
 
         public DbSet<TravelItem> TravelItems { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
+        public DbSet<MaterialRequest> MaterialRequests { get; set; }
 
+        public DbSet<UpfitMaterialRequestItem> UpfitMaterialRequestItems { get; set; }
+
+        public DbSet<PowercomMaterialRequestItem> PowercomMaterialRequestItems { get; set; }
+
+        public DbSet<Branch> Branches { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<ChangeLogEntry> ChangeLogEntries { get; set; }
+
+        public DbSet<ProductGroup> ProductGroups { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
             optionsBuilder.UseNpgsql("User ID=postgres;Password=;Host=localhost;Port=5432;Database=cummins;");
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<Document>().ToTable("Documents");
             modelBuilder.Entity<DocumentItem>().ToTable("DocumentItems");
             modelBuilder.Entity<Element>().ToTable("Elements");
+            modelBuilder.Entity<MaterialRequestItem>().ToTable("MaterialRequestItems");
 
-            modelBuilder.Entity<UpfitRecord>().OwnsMany(record => record.FileReferences).WithOwner();
+            modelBuilder.Entity<UpfitElement>().HasIndex(element => element.UniqueId).IsUnique();
+
+            modelBuilder.Entity<UpfitRecord>().OwnsMany(record => record.FileReferences, builder =>
+            {
+                builder.WithOwner().HasForeignKey(nameof(FileReference.EntityId));
+                builder.ToTable("FileReferences");
+            });
         }
     }
 }

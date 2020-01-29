@@ -5,6 +5,8 @@ namespace Cummins.Model.Items
 {
     public abstract class DocumentItem : Entity
     {
+        public ChangeLogEntry ChangeLogEntry { get; set; }
+
         [Required] public string Description { get; set; }
 
         public decimal Quantity { get; set; }

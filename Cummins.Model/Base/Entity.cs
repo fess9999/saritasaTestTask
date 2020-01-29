@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cummins.Model.Base
 {
-    public class Entity
+    public class Entity : IEntity
     {
         [Key] public Guid Id { get; set; }
     }

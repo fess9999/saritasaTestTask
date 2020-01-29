@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cummins.Model", "Cummins.Model\Cummins.Model.csproj", "{E0F2C964-76D6-47A5-AE19-5B916887A8D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cummins.Bootstrapper", "Cummins.Bootstraper\Cummins.Bootstrapper.csproj", "{C2293D4B-4796-4B47-A1DF-72F2CF84242B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cummins.Bootstrapper", "Cummins.Bootstraper\Cummins.Bootstrapper.csproj", "{C2293D4B-4796-4B47-A1DF-72F2CF84242B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cummins.BusinessLogic", "Cummins.BusinessLogic\Cummins.BusinessLogic.csproj", "{7FA2F2F4-7ECC-417F-AA86-19BD658F8D68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C2293D4B-4796-4B47-A1DF-72F2CF84242B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2293D4B-4796-4B47-A1DF-72F2CF84242B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2293D4B-4796-4B47-A1DF-72F2CF84242B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FA2F2F4-7ECC-417F-AA86-19BD658F8D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA2F2F4-7ECC-417F-AA86-19BD658F8D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA2F2F4-7ECC-417F-AA86-19BD658F8D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA2F2F4-7ECC-417F-AA86-19BD658F8D68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

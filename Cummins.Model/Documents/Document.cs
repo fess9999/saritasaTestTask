@@ -8,6 +8,10 @@ namespace Cummins.Model.Documents
 {
     public abstract class Document : Entity
     {
+        public Contractor Contractor { get; set; }
+
+        public Guid ContractorId { get; set; }
+
         public Document Parent { get; set; }
 
         public List<DocumentItem> Items { get; set; } = new List<DocumentItem>();

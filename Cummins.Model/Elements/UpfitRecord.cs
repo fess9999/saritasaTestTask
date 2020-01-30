@@ -5,8 +5,6 @@ namespace Cummins.Model.Elements
 {
     public class UpfitRecord : Entity
     {
-        public List<FileReference> FileReferences { get; set; } = new List<FileReference>();
-
         public string RFQNotes { get; set; }
 
         public bool PassToPurchasing { get; set; }

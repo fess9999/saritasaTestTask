@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Cummins.Bootstrapper.Migrations
 {
     [DbContext(typeof(CumminsDbContext))]
-    [Migration("20200130050347_InitialCreate")]
+    [Migration("20200130080703_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -329,6 +329,23 @@ namespace Cummins.Bootstrapper.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Element");
                 });
 
+            modelBuilder.Entity("Cummins.Model.Elements.FileReference", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FileReference");
+                });
+
             modelBuilder.Entity("Cummins.Model.Elements.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -437,6 +454,27 @@ namespace Cummins.Bootstrapper.Migrations
                     b.HasIndex("UpfitElementId");
 
                     b.ToTable("UpfitRecords");
+                });
+
+            modelBuilder.Entity("Cummins.Model.Elements.UpfitRecordFileReferencesBinding", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("FileReferenceId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UpfitRecordId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FileReferenceId");
+
+                    b.HasIndex("UpfitRecordId");
+
+                    b.ToTable("UpfitRecordFileReferencesBindings");
                 });
 
             modelBuilder.Entity("Cummins.Model.Items.ChangeLogEntry", b =>
@@ -827,31 +865,21 @@ namespace Cummins.Bootstrapper.Migrations
                     b.HasOne("Cummins.Model.Elements.UpfitElement", null)
                         .WithMany("UpfitRecords")
                         .HasForeignKey("UpfitElementId");
+                });
 
-                    b.OwnsMany("Cummins.Model.Elements.FileReference", "FileReferences", b1 =>
-                        {
-                            b1.Property<Guid>("Id")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("uuid");
+            modelBuilder.Entity("Cummins.Model.Elements.UpfitRecordFileReferencesBinding", b =>
+                {
+                    b.HasOne("Cummins.Model.Elements.FileReference", "FileReference")
+                        .WithMany()
+                        .HasForeignKey("FileReferenceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                            b1.Property<Guid>("EntityId")
-                                .HasColumnType("uuid");
-
-                            b1.Property<string>("Name")
-                                .HasColumnType("text");
-
-                            b1.Property<string>("Url")
-                                .HasColumnType("text");
-
-                            b1.HasKey("Id");
-
-                            b1.HasIndex("EntityId");
-
-                            b1.ToTable("FileReferences");
-
-                            b1.WithOwner()
-                                .HasForeignKey("EntityId");
-                        });
+                    b.HasOne("Cummins.Model.Elements.UpfitRecord", "UpfitRecord")
+                        .WithMany()
+                        .HasForeignKey("UpfitRecordId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Cummins.Model.Items.ChangeLogEntry", b =>

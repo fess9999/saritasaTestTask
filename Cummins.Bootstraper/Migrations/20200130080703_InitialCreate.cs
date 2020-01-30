@@ -56,6 +56,19 @@ namespace Cummins.Bootstrapper.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "FileReference",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Url = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FileReference", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MaterialRequests",
                 columns: table => new
                 {
@@ -375,20 +388,25 @@ namespace Cummins.Bootstrapper.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FileReferences",
+                name: "UpfitRecordFileReferencesBindings",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    EntityId = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
-                    Url = table.Column<string>(nullable: true)
+                    UpfitRecordId = table.Column<Guid>(nullable: false),
+                    FileReferenceId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FileReferences", x => x.Id);
+                    table.PrimaryKey("PK_UpfitRecordFileReferencesBindings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_FileReferences_UpfitRecords_EntityId",
-                        column: x => x.EntityId,
+                        name: "FK_UpfitRecordFileReferencesBindings_FileReference_FileReferen~",
+                        column: x => x.FileReferenceId,
+                        principalTable: "FileReference",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UpfitRecordFileReferencesBindings_UpfitRecords_UpfitRecordId",
+                        column: x => x.UpfitRecordId,
                         principalTable: "UpfitRecords",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -632,11 +650,6 @@ namespace Cummins.Bootstrapper.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_FileReferences_EntityId",
-                table: "FileReferences",
-                column: "EntityId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_MaterialRequestItems_MaterialRequestId",
                 table: "MaterialRequestItems",
                 column: "MaterialRequestId");
@@ -732,6 +745,16 @@ namespace Cummins.Bootstrapper.Migrations
                 column: "UpfitItemId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UpfitRecordFileReferencesBindings_FileReferenceId",
+                table: "UpfitRecordFileReferencesBindings",
+                column: "FileReferenceId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UpfitRecordFileReferencesBindings_UpfitRecordId",
+                table: "UpfitRecordFileReferencesBindings",
+                column: "UpfitRecordId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UpfitRecords_UpfitElementId",
                 table: "UpfitRecords",
                 column: "UpfitElementId");
@@ -739,9 +762,6 @@ namespace Cummins.Bootstrapper.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "FileReferences");
-
             migrationBuilder.DropTable(
                 name: "MaterialRequestItems");
 
@@ -758,7 +778,7 @@ namespace Cummins.Bootstrapper.Migrations
                 name: "UpfitItemBindings");
 
             migrationBuilder.DropTable(
-                name: "UpfitRecords");
+                name: "UpfitRecordFileReferencesBindings");
 
             migrationBuilder.DropTable(
                 name: "MaterialRequests");
@@ -768,6 +788,12 @@ namespace Cummins.Bootstrapper.Migrations
 
             migrationBuilder.DropTable(
                 name: "DocumentItems");
+
+            migrationBuilder.DropTable(
+                name: "FileReference");
+
+            migrationBuilder.DropTable(
+                name: "UpfitRecords");
 
             migrationBuilder.DropTable(
                 name: "Products");

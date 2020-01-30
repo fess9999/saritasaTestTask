@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Cummins.BusinessLogic.Services.QuoteService" Collapsed="true">
+  <Class Name="Cummins.BusinessLogic.Services.QuoteService">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
@@ -8,36 +8,36 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Cummins.BusinessLogic.BusinessObjects.BusinessObject&lt;TEntity&gt;" Collapsed="true">
+  <Class Name="Cummins.BusinessLogic.BusinessObjects.BusinessObject&lt;TEntity&gt;">
     <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessObjects\BusinessObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Cummins.BusinessLogic.BusinessObjects.PowercomItemBusinessObject" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+  <Class Name="Cummins.BusinessLogic.BusinessObjects.PowercomItemBusinessObject">
+    <Position X="2.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BusinessObjects\PowercomItemBusinessObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Cummins.BusinessLogic.BusinessObjects.QuoteBusinessObject" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+  <Class Name="Cummins.BusinessLogic.BusinessObjects.QuoteBusinessObject">
+    <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>BusinessObjects\QuoteBusinessObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Cummins.BusinessLogic.Services.IDocumentService&lt;TDocumentBusinessObject, TDocument&gt;">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\IDocumentService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Cummins.BusinessLogic.Services.IQuoteService">
-    <Position X="0.5" Y="5.75" Width="1.5" />
+    <Position X="0.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\IQuoteService.cs</FileName>

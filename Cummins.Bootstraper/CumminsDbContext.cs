@@ -60,6 +60,8 @@ namespace Cummins.Bootstrapper
 
         public DbSet<ProductGroup> ProductGroups { get; set; }
 
+        public DbSet<UpfitRecordFileReferencesBinding> UpfitRecordFileReferencesBindings { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
             optionsBuilder.UseNpgsql("User ID=postgres;Password=;Host=localhost;Port=5432;Database=cummins;");
 
@@ -71,12 +73,6 @@ namespace Cummins.Bootstrapper
             modelBuilder.Entity<MaterialRequestItem>().ToTable("MaterialRequestItems");
 
             modelBuilder.Entity<UpfitElement>().HasIndex(element => element.UniqueId).IsUnique();
-
-            modelBuilder.Entity<UpfitRecord>().OwnsMany(record => record.FileReferences, builder =>
-            {
-                builder.WithOwner().HasForeignKey(nameof(FileReference.EntityId));
-                builder.ToTable("FileReferences");
-            });
         }
     }
 }

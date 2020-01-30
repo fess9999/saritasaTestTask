@@ -17,5 +17,7 @@ namespace Cummins.BusinessLogic.BusinessObjects
         public List<PowercomItem> PowercomItems => Entity.Items.OfType<PowercomItem>().ToList();
 
         public List<UpfitItem> UpfitItems => Entity.Items.OfType<UpfitItem>().ToList();
+
+        public bool IsEditable => !(Entity.IsAccepted || Entity.IsShared || Entity.IsArchived);
     }
 }

@@ -28,9 +28,9 @@
       <FileName>Documents\Document.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Property Name="Contractor" />
       <Property Name="Parent" />
       <Property Name="Owner" />
-      <Property Name="Contractor" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Items" />
@@ -85,28 +85,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Cummins.Model.Documents.Branch">
-    <Position X="3.5" Y="18.75" Width="1.5" />
+    <Position X="13.5" Y="15.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Documents\Branch.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Cummins.Model.Documents.PMA">
-    <Position X="3.5" Y="15.75" Width="1.5" />
+    <Position X="13.5" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAIAAgAABAAAAA=</HashCode>
       <FileName>Documents\PMA.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="ServiceBranch" />
       <Property Name="TravelItem" />
+      <Property Name="ServiceBranch" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="PMAEntries" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Cummins.Model.Documents.PMAEntry">
-    <Position X="6.5" Y="15.5" Width="1.5" />
+    <Position X="10.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAABAEAAAAAAAAAAAAAAAAAAIAAgAAAQAA=</HashCode>
       <FileName>Documents\PMAEntry.cs</FileName>
@@ -116,18 +116,18 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Cummins.Model.Documents.StartTestInformation">
-    <Position X="1" Y="18" Width="1.5" />
+    <Position X="16" Y="16.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAIAAAAAAAAAQIgAAAAAACAAAAA=</HashCode>
       <FileName>Documents\StartTestInformation.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Branch" />
       <Property Name="TravelItem" />
+      <Property Name="Branch" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Cummins.Model.Documents.StartTestInformationEntry">
-    <Position X="9.5" Y="13.75" Width="3.5" />
+    <Position X="5.5" Y="15.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAQAAACAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Documents\StartTestInformationEntry.cs</FileName>
@@ -140,14 +140,14 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Cummins.Model.Documents.StartUpRequirement" Collapsed="true">
-    <Position X="10.5" Y="16" Width="1.75" />
+    <Position X="6.5" Y="18" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Documents\StartUpRequirement.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Cummins.Model.Documents.TravelItem">
-    <Position X="0.5" Y="15.5" Width="1.5" />
+    <Position X="16.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Documents\TravelItem.cs</FileName>
@@ -179,7 +179,7 @@
   <Class Name="Cummins.Model.Elements.UpfitElement">
     <Position X="6.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACBAAgAAAAAABAAAAIAAAAAAAAAAAAAASAU=</HashCode>
+      <HashCode>AAAAAAAAACBAAgAAAAAABAAAAIAAAAAAAAAAAAAQSAU=</HashCode>
       <FileName>Elements\UpfitElement.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -188,21 +188,11 @@
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Products" />
+      <Property Name="UpfitRecords" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Cummins.Model.Elements.UpfitElementBinding">
-    <Position X="3.5" Y="9.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAQAAA=</HashCode>
-      <FileName>Elements\UpfitElementBinding.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="UpfitElement" />
-      <Property Name="UpfitRecord" />
-    </ShowAsAssociation>
-  </Class>
   <Class Name="Cummins.Model.Elements.UpfitRecord">
-    <Position X="0.5" Y="8.25" Width="1.5" />
+    <Position X="0.5" Y="8.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAggQAACAEQgAABAAAgAABAAAgAAAAAIBIIAgAQAAQA=</HashCode>
       <FileName>Elements\UpfitRecord.cs</FileName>
@@ -216,14 +206,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Cummins.Model.Elements.Category">
-    <Position X="0.5" Y="5.75" Width="1.5" />
+    <Position X="3.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Elements\Category.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Cummins.Model.Elements.PowercomElement" Collapsed="true">
-    <Position X="8.75" Y="9.25" Width="1.5" />
+    <Position X="8.75" Y="9.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Elements\PowercomElement.cs</FileName>
@@ -236,8 +226,8 @@
       <FileName>Items\ChangeLogEntry.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="UnderlyingDocument" />
       <Property Name="ModifiedBy" />
+      <Property Name="UnderlyingDocument" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Cummins.Model.Items.MaterialRequest">
@@ -258,14 +248,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Cummins.Model.Items.PowercomItemBinding">
-    <Position X="9.25" Y="10.75" Width="1.5" />
+    <Position X="9" Y="10.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>ABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
       <FileName>Items\PowercomItemBinding.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="PowercomElement" />
       <Property Name="PowercomItem" />
+      <Property Name="PowercomElement" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Cummins.Model.Items.PowercomMaterialRequestItem">
@@ -279,18 +269,18 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Cummins.Model.Items.UpfitItemBinding">
-    <Position X="14.25" Y="13.25" Width="1.5" />
+    <Position X="15.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Items\UpfitItemBinding.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="UpfitElement" />
       <Property Name="UpfitItem" />
+      <Property Name="UpfitElement" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Cummins.Model.Items.UpfitMaterialRequestItem">
-    <Position X="17.25" Y="4.25" Width="1.5" />
+    <Position X="17.25" Y="4.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\UpfitMaterialRequestItem.cs</FileName>

@@ -12,6 +12,7 @@ namespace Cummins.Model.Elements
 
         public string Kind { get; set; } = Standard;
 
+        public List<UpfitRecord> UpfitRecords { get; set; } = new List<UpfitRecord>();
 
         public Category Category { get; set; }
 
@@ -23,7 +24,6 @@ namespace Cummins.Model.Elements
 
         public Guid? CreatedById { get; set; }
 
-        // todo fess put unique idx
         [Required] public string UniqueId { get; set; }
     }
 }

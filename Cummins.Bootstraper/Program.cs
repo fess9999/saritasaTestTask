@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace Cummins.Bootstraper
+namespace Cummins.Bootstrapper
 {
     internal class Program
     {
-        static void Main(string[] args)
+        private static async Task Main()
         {
-            Console.WriteLine("Hello World!");
+            var dbContext = new CumminsDbContext();
+
+            Console.WriteLine($"Migrating on {dbContext.Database.GetDbConnection().ConnectionString}");
+            await dbContext.Database.MigrateAsync();
+
+            Console.WriteLine("Done!");
         }
     }
 }

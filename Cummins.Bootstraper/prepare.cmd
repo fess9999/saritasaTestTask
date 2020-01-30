@@ -11,4 +11,4 @@ set connString=postgresql://postgres:postgres@localhost
 %psql% -a -c "drop database if exists %dbName%" %connString%
 
 dotnet ef migrations add InitialCreate
-dotnet ef database update
+rem dotnet ef database update

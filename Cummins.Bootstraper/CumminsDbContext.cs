@@ -30,8 +30,6 @@ namespace Cummins.Bootstrapper
 
         public DbSet<UpfitRecord> UpfitRecords { get; set; }
 
-        public DbSet<UpfitElementBinding> UpfitElementBindings { get; set; }
-
         public DbSet<PowercomItemBinding> PowercomItemBindings { get; set; }
 
         public DbSet<UpfitItemBinding> UpfitItemBindings { get; set; }
